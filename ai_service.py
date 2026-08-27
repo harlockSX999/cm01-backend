@@ -5,10 +5,10 @@ from pathlib import Path
 from dotenv import load_dotenv
 from openai import OpenAI
 
-BASE_DIR = Path(__file__).resolve().parent
-load_dotenv(BASE_DIR / ".env")
+BASE_DIR = Path(__file__).resolve().parent.parent
+load_dotenv(BASE_DIR / "config" / ".env")
 
-SCORING_PROMPT = BASE_DIR / "scoring_prompt.txt"
+SCORING_PROMPT = BASE_DIR / "ai" / "scoring_prompt.txt"
 
 def score_lead(lead):
     api_key = os.getenv("OPENAI_API_KEY")

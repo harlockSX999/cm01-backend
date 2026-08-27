@@ -1,9 +1,9 @@
 import sqlite3
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent
-DATABASE_FILE = BASE_DIR / "cm01.db"
-SCHEMA_FILE = BASE_DIR / "schema.sql"
+BASE_DIR = Path(__file__).resolve().parent.parent
+DATABASE_FILE = BASE_DIR / "database" / "cm01.db"
+SCHEMA_FILE = BASE_DIR / "database" / "schema.sql"
 
 def get_connection():
     connection = sqlite3.connect(DATABASE_FILE)
