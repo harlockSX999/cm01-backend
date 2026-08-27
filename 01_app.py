@@ -1,9 +1,13 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 from lead_service import create_lead
 
 app = Flask(__name__)
 CORS(app)
+
+@app.get("/")
+def index():
+    return send_from_directory(".", "index.html")
 
 @app.get("/health")
 def health():
